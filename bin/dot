@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# dot
+#
+# `dot` handles installation, updates, things like that. Run it periodically
+# to make sure you're on the latest and greatest.
+export DOTFILES=$HOME/.dotfiles
+
+# Set macOS defaults
+$DOTFILES/macos/set-defaults.sh
+
+# Install homebrew
+$DOTFILES/homebrew/install.sh 2>&1
+
+# Upgrade homebrew
+echo "› brew update"
+brew update
+
+# Install oh-my-zsh
+# echo "› install oh-my-zsh"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# if [[ $(echo $0) -ne "-zsh"]]; then
+#   chsh -s $(which zsh)
+# fi
+
+# Install software
+echo "› $DOTFILES/script/install"
+$DOTFILES/script/install
+
+echo "› Delete bash files"
+find -H ~ -maxdepth 1 -name '*.bash*' | while read bash_files ; do rm -rf "${bash_files}" ; done
+
+# Creates an alias for oh-my-zsh custom folder
+echo "› alias oh-my-zsh custom folder"
+rm -rf $HOME/.oh-my-zsh/custom
+ln -s $DOTFILES/oh-my-zsh/custom $HOME/.oh-my-zsh
+
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+read -p "Would you like to restart the computer now? [Y/n] " -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    osascript -e 'tell app "System Events" to restart'
+fi

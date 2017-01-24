@@ -1,0 +1,27 @@
+"*":
+  core:
+    disabledPackages: [
+      "background-tips"
+      "exception-reporting"
+      "metrics"
+    ]
+    followSymLinks: false
+    hideGitIgnoredFiles: true
+    ignoredNames: [
+      ".git"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "seti-ui"
+      "monokai-seti"
+    ]
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+  "seti-syntax": {}
+  "seti-ui":
+    compactView: true
+    disableAnimations: true
+  welcome:
+    showOnStartup: false
