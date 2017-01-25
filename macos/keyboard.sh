@@ -11,7 +11,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Off: 300000
 # Slow: 120
 # Fast: 2
-defaults write NSGlobalDomain KeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 5
 
 # Set delay until repeat (in milliseconds)
 # Long: 120
