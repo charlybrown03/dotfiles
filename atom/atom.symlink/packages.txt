@@ -1,4 +1,4 @@
-atom-beautify@0.29.16
+atom-beautify@0.29.17
 atom-ternjs@0.17.0
 autocomplete-modules@1.6.7
 build@0.67.0
@@ -10,8 +10,10 @@ highlight-selected@0.12.0
 linter@1.11.21
 linter-eslint@8.0.0
 linter-sass-lint@1.7.4
+merge-conflicts@1.4.4
 monokai-seti@0.7.0
 pigments@0.39.0
 seti-ui@1.4.0
 tabs-to-spaces@1.0.3
 todo-show@1.9.0
+
