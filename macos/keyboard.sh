@@ -11,12 +11,12 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Off: 300000
 # Slow: 120
 # Fast: 2
-defaults write NSGlobalDomain KeyRepeat -int 40
+defaults write NSGlobalDomain KeyRepeat -int 10
 
 # Set delay until repeat (in milliseconds)
 # Long: 120
 # Short: 15
-defaults write NSGlobalDomain InitialKeyRepeat -int 40
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Adjust keyboard brightness in low light
 defaults write com.apple.BezelServices kDim -bool true

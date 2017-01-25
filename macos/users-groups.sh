@@ -5,7 +5,7 @@
 ###############################################################################
 
 # Display login window as: Name and password
-sudo defaults write /Library/Preferences/com.apple.loginwindow "SHOWFULLNAME" -bool true
+sudo defaults write /Library/Preferences/com.apple.loginwindow "SHOWFULLNAME" -bool false
 
 # Disable automatic login
 sudo defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser 2>/dev/null
