@@ -35,6 +35,10 @@
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
+  "markdown-preview-plus":
+    useGitHubStyle: true
+  "markdown-writer":
+    fileExtension: ".md"
   "seti-syntax": {}
   "seti-ui":
     compactView: true
