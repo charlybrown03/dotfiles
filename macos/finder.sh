@@ -28,17 +28,22 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop         -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop     -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop     -bool true
 
+# Remove All My Files, Airdrop and iCloud Drive from Finder's sidebar
+mysides remove All My Files file:///System/Library/CoreServices/Finder.app/Contents/Resources/MyLibraries/myDocuments.cannedSearch/
+mysides remove iCloud x-apple-finder:icloud
+mysides remove AirDrop nwnode://domain-AirDrop
+
 # Visibility of hidden files
 #defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 
 # Status bar
-defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowStatusBar -bool false
 
 # Path bar
-defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowPathbar -bool false
 
 # Text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
@@ -81,15 +86,15 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk    -bool false
 
 # Set icon view settings on desktop and in icon views
 # Item info near icons
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo bool true" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo bool true" ~/Library/Preferences/com.apple.finder.plist
 # Item info to right of icons
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:labelOnBottom bool false" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:labelOnBottom bool false" ~/Library/Preferences/com.apple.finder.plist
 # Snap-to-grid for icons
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy string grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 # Grid spacing for icons
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing integer 100" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
 # Icon size
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize integer 48" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
 
 # Preferred view style
 # Icon View   : `icnv`
