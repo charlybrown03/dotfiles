@@ -29,9 +29,9 @@ defaults write com.apple.finder ShowMountedServersOnDesktop     -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop     -bool true
 
 # Remove All My Files, Airdrop and iCloud Drive from Finder's sidebar
-mysides remove All My Files file:///System/Library/CoreServices/Finder.app/Contents/Resources/MyLibraries/myDocuments.cannedSearch/
+mysides remove All\ My\ Files file:///System/Library/CoreServices/Finder.app/Contents/Resources/MyLibraries/myDocuments.cannedSearch/
 mysides remove iCloud x-apple-finder:icloud
-mysides remove AirDrop nwnode://domain-AirDrop
+mysides remove domain-AirDrop nwnode://domain-AirDrop
 
 # Visibility of hidden files
 #defaults write com.apple.finder AppleShowAllFiles -bool true
