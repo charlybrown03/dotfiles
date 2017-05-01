@@ -67,5 +67,5 @@ this script in `bin/`.
 
 ## thanks
 
-I forked [Zach Holman](http://github.com/holman)' excellent
+I forked [Zach Holman](http://github.com/holman)'s excellent
 [dotfiles](http://github.com/holman/dotfiles). A decent amount of the code in these dotfiles stem or are inspired from Holman's project.

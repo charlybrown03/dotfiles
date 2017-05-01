@@ -36,4 +36,3 @@ mas 'Pocket', id: 568494494
 mas 'Slack', id: 803453959
 mas 'Twitter', id: 409789998
 mas 'Wunderlist', id: 410628904
-mas 'Xcode', id: 497799835
