@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'caskroom/drivers'
 
 brew 'ack'
 brew 'autojump'
@@ -20,7 +21,6 @@ brew 'yarn'
 cask 'alfred'
 cask 'atom'
 cask 'firefox'
-cask 'hipchat'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'sequel-pro'
