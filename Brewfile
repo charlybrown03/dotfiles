@@ -25,7 +25,7 @@ cask 'google-chrome'
 cask 'hyper'
 cask 'sequel-pro'
 cask 'spotify'
-cask 'synology-cloud-station-drive'
+cask 'synology-cloud-station-drive', args: [ '-allowUntrusted' ]
 cask 'vlc'
 
 mas '1Password', id: 443987910
