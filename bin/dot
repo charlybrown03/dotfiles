@@ -17,23 +17,21 @@ echo "› brew update"
 brew update
 
 # Install software
-echo "› $DOTFILES/script/install"
+echo "› install dotfiles packages"
 $DOTFILES/script/install
 
 # Install oh-my-zsh
 echo "› install oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-if [[ $(echo $0) -ne "-zsh"]]; then
-  chsh -s $(which zsh)
-fi
- 
-echo "› Delete bash files"
-find -H ~ -maxdepth 1 -name '*.bash*' | while read bash_files ; do rm -rf "${bash_files}" ; done
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+chsh -s $(which zsh)
 
 # Creates an alias for oh-my-zsh custom folder
 echo "› alias oh-my-zsh custom folder"
 rm -rf $HOME/.oh-my-zsh/custom
 ln -s $DOTFILES/oh-my-zsh/custom $HOME/.oh-my-zsh
+
+echo "› Delete bash files"
+find -H ~ -maxdepth 1 -name '*.bash*' | while read bash_files ; do rm -rf "${bash_files}" ; done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 read -p "Would you like to restart the computer now? [Y/n] " -r
