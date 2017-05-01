@@ -115,5 +115,3 @@ do
 done
 
 unset config_files
-
-export PATH="$HOME/.yarn/bin:$PATH"

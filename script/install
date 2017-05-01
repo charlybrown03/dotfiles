@@ -13,7 +13,3 @@ brew bundle
 # Find the installers and run them iteratively
 echo "› install.sh"
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
-
-# Installs node.js global dependencies
-echo "› yarn global dependencies"
-cat $DOTFILES/yarn/Yarnfile | xargs yarn global add
