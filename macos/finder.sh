@@ -32,6 +32,9 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop     -bool true
 mysides remove All\ My\ Files file:///System/Library/CoreServices/Finder.app/Contents/Resources/MyLibraries/myDocuments.cannedSearch/
 mysides remove iCloud x-apple-finder:icloud
 mysides remove domain-AirDrop nwnode://domain-AirDrop
+mysides add Pictures "file://${HOME}/Pictures"
+mysides add Projects "file://${HOME}/Projects"
+mysides add Home "file://${HOME}"
 
 # Visibility of hidden files
 #defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -86,9 +89,9 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk    -bool false
 
 # Set icon view settings on desktop and in icon views
 # Item info near icons
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo bool true" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
 # Item info to right of icons
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:labelOnBottom bool false" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
 # Snap-to-grid for icons
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 # Grid spacing for icons
