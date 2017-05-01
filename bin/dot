@@ -16,17 +16,17 @@ $DOTFILES/homebrew/install.sh 2>&1
 echo "› brew update"
 brew update
 
-# Install oh-my-zsh
-# echo "› install oh-my-zsh"
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# if [[ $(echo $0) -ne "-zsh"]]; then
-#   chsh -s $(which zsh)
-# fi
-
 # Install software
 echo "› $DOTFILES/script/install"
 $DOTFILES/script/install
 
+# Install oh-my-zsh
+echo "› install oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [[ $(echo $0) -ne "-zsh"]]; then
+  chsh -s $(which zsh)
+fi
+ 
 echo "› Delete bash files"
 find -H ~ -maxdepth 1 -name '*.bash*' | while read bash_files ; do rm -rf "${bash_files}" ; done
 
