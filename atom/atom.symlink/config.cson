@@ -2,6 +2,7 @@
   "atom-material-ui":
     colors:
       abaseColor: "#607d8b"
+      accentColor: "#b27252"
       genAccent: true
       paintCursor: true
       predefinedColor: "Blue Grey"
