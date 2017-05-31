@@ -27,7 +27,9 @@ cask 'gpgtools'
 cask 'hyper'
 cask 'sequel-pro'
 cask 'spotify'
-# cask 'synology-cloud-station-drive'
+cask 'synology-cloud-station-drive'
+cask 'vagrant'
+cask 'virtualbox'
 cask 'vlc'
 
 mas '1Password', id: 443987910
