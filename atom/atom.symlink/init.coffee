@@ -9,3 +9,7 @@
 # atom.workspace.observeTextEditors (editor) ->
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
+
+atom.commands.add 'atom-workspace', 'lines:delete-whitelines-regex', ->
+  buffer = atom.workspace.getActiveTextEditor().getBuffer()
+  buffer.replace /\n\n/g, '\n'
