@@ -38,8 +38,7 @@
     showInvisibles: true
   "linter-sass-lint":
     globalSassLint: true
-  "linter-ui-default":
-    panelHeight: 81
+  "linter-ui-default": {}
   "markdown-preview-plus":
     useGitHubStyle: true
   "markdown-writer":
