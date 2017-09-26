@@ -19,6 +19,8 @@
   # Setting to git 2.0 default to suppress warning message
   default = simple
 [user]
-	signingkey = C1A3C6F5
+	signingkey = 86905626D1F52D2E8144473DDE882408C6496025
 [commit]
 	gpgsign = true
+[credential]
+	helper = osxkeychain
