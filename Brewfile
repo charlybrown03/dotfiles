@@ -20,8 +20,6 @@ brew 'yarn'
 
 cask 'alfred'
 cask 'atom'
-cask 'firefox'
-cask 'flux'
 cask 'google-chrome'
 cask 'gpgtools'
 cask 'hyper'
