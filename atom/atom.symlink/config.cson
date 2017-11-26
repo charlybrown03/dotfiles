@@ -38,7 +38,8 @@
     showInvisibles: true
   "linter-sass-lint":
     globalSassLint: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview-plus":
     useGitHubStyle: true
   "markdown-writer":
