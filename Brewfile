@@ -16,7 +16,6 @@ brew 'node'
 brew 'openssl'
 brew 'unrar'
 brew 'wget'
-brew 'yarn'
 
 cask 'alfred'
 cask 'atom'
