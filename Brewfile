@@ -19,6 +19,7 @@ brew 'wget'
 
 cask 'alfred'
 cask 'atom'
+cask 'docker'
 cask 'google-chrome'
 cask 'gpg-suite'
 cask 'hyper'
