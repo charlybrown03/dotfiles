@@ -27,6 +27,7 @@
     ignoredNames: [
       ".git"
     ]
+    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
