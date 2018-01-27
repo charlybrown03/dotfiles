@@ -25,4 +25,3 @@ merge-conflicts@1.4.5
 pigments@0.40.2
 tabs-to-spaces@1.0.3
 todo-show@2.1.0
-
