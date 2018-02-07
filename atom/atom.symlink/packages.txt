@@ -13,7 +13,7 @@ editorconfig@2.2.2
 highlight-selected@0.13.1
 hyperclick@0.1.5
 intentions@1.1.5
-js-hyperclick@1.12.2
+js-hyperclick@1.13.0
 language-blade@0.38.0
 language-nunjucks@4.2.1
 language-vue@0.23.1
@@ -28,6 +28,6 @@ merge-conflicts@1.4.5
 pigments@0.40.2
 sort-lines@0.18.0
 tabs-to-spaces@1.0.3
-teletype@0.6.0
+teletype@0.7.0
 todo-show@2.1.0
 
