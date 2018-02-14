@@ -6,12 +6,9 @@
 # to make sure you're on the latest and greatest.
 export DOTFILES=$HOME/.dotfiles
 
-# Install homebrew
-$DOTFILES/homebrew/install.sh 2>&1
-
-# Upgrade homebrew
-echo "› brew update"
-brew update
+# Upgrade pacman
+echo "› pacman update"
+sudo pacman -Syu
 
 # Install software
 echo "› install dotfiles packages"
@@ -23,9 +20,9 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 chsh -s $(which zsh)
 
 # Creates an alias for oh-my-zsh custom folder
-echo "› alias oh-my-zsh custom folder"
-rm -rf $HOME/.oh-my-zsh/custom
-ln -s $DOTFILES/oh-my-zsh/custom $HOME/.oh-my-zsh
+# echo "› alias oh-my-zsh custom folder"
+# rm -rf $HOME/.oh-my-zsh/custom
+# ln -s $DOTFILES/oh-my-zsh/custom $HOME/.oh-my-zsh
 
 echo "› Delete bash files"
 find -H ~ -maxdepth 1 -name '*.bash*' | while read bash_files ; do rm -rf "${bash_files}" ; done
@@ -34,5 +31,5 @@ echo "Done. Note that some of these changes require a logout/restart to take eff
 read -p "Would you like to restart the computer now? [Y/n] " -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    osascript -e 'tell app "System Events" to restart'
+    sudo reboot
 fi
