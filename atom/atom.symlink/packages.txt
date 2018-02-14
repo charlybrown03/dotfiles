@@ -28,6 +28,6 @@ merge-conflicts@1.4.5
 pigments@0.40.2
 sort-lines@0.18.0
 tabs-to-spaces@1.0.3
-teletype@0.7.0
+teletype@0.8.0
 todo-show@2.1.0
 
