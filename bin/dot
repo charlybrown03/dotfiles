@@ -6,9 +6,14 @@
 # to make sure you're on the latest and greatest.
 export DOTFILES=$HOME/.dotfiles
 
-# Upgrade pacman
+# Upgrade Arch repositories
 echo "› pacman update"
 sudo pacman -Syu
+
+# Upgrade Debian repositories
+# echo "› apt update && apt upgrade && clean"
+# sudo apt update && sudo apt upgrade
+# sudo apt autoremove && sudo apt autoclean
 
 # Install software
 echo "› install dotfiles packages"
