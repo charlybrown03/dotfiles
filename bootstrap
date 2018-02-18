@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Install NodeJS
+echo "› installing NodeJS"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt install -y nodejs
+
+# Install Albert
+echo "› installing Albert"
+wget -nv -O Release.key https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+sudo apt-key add - < Release.key
+sudo apt update
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/albert.list"
+sudo apt update
+sudo apt install albert
+
+# Install Atom
+echo "› installing Atom"
+wget -O atom.deb https://atom.io/download/deb
+sudo dpkg -i atom.deb
+rm atom.deb
