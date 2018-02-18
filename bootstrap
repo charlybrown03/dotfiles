@@ -14,6 +14,7 @@ sudo apt update
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/albert.list"
 sudo apt update
 sudo apt install albert
+cp /usr/share/applications/albert.desktop ~/.config/autostart/ && chmod +x ~/.config/autostart/albert.desktop
 
 # Install Atom
 echo "› installing Atom"
