@@ -3,5 +3,13 @@
 # Debian distrubutions
 sudo apt install autojump git htop docker vagrant virtualbox xsel zsh
 
+wget -nv -O Release.key https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+sudo apt-key add - < Release.key
+sudo apt-get update
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/albert.list"
+sudo apt update
+sudo apt install albert
+
 # Arch distrubutions
 # sudo pacman -Sy autojump git htop node wget atom docker vagrant virtualbox xsel
