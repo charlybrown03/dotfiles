@@ -5,7 +5,7 @@ sudo apt update && sudo apt -y upgrade
 sudo apt -y autoremove && sudo apt autoclean
 
 # Basic Ubuntu packages
-sudo apt install autojump git htop vagrant virtualbox xsel zsh ack-grep
+sudo apt install autojump git htop vagrant virtualbox xsel zsh ack-grep ansible
 
 # Install NodeJS
 echo "› installing NodeJS"
