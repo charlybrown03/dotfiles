@@ -1,54 +1,58 @@
 #!/bin/sh
 
 # Update Ubuntu
+echo "› healt your system for you"
 sudo apt update && sudo apt -y upgrade
 sudo apt -y autoremove && sudo apt autoclean
 
 # Basic Ubuntu packages
-sudo apt install autojump git htop vagrant virtualbox-dkms xsel zsh ack-grep ansible python-pip
+echo "› installing basic packages"
+sudo xargs -a packages.txt apt -y install
 
-# Install NodeJS
-echo "› installing NodeJS"
+echo "› ADD EXTRA SOURCES:"
+
+# Add NodeJS sources
+echo "› adding NodeJS"
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt install -y nodejs
 
-# Install Albert
-echo "› installing Albert"
-wget -nv -O Release.key https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-sudo apt-key add - < Release.key
-sudo apt update
-
+# Add Albert sources
+echo "› adding Albert"
+curl -fsSL https://build.opensuse.org/projects/home:manuelschneid3r/public_key | sudo apt-key add -
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/albert.list"
-sudo apt update
-sudo apt install albert
-cp /usr/share/applications/albert.desktop ~/.config/autostart/ && chmod +x ~/.config/autostart/albert.desktop
 
-# Install Atom
-echo "› installing Atom"
-wget -O atom.deb https://atom.io/download/deb
-sudo dpkg -i atom.deb
-rm atom.deb
-
-# Install Slack
-echo "› installing Slack"
-wget -O slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-3.0.5-amd64.deb
-sudo dpkg -i slack.deb
-rm slack.deb
-
-# Install Docker
-echo "› installing Docker"
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+# Add Docker sources
+echo "› adding Docker"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Add Spotify sources
+echo "› adding Spotify"
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+
+# Install and configure from extra repositories
+echo "› installing and configuring from extra repositories"
 sudo apt update
-sudo apt install docker-ce docker-compose
+sudo apt -y install spotify-client docker-ce docker-compose albert nodejs
+
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-# Install Spotify
-echo "› installing Spotify"
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update
-sudo apt install -y spotify-client
+cp /usr/share/applications/albert.desktop ~/.config/autostart/ && chmod +x ~/.config/autostart/albert.desktop
+
+echo "› installing from .deb sources"
+
+# Install Atom from .deb sources
+echo "› downloading Atom"
+wget -O atom.deb https://atom.io/download/deb
+echo "› installing Atom"
+sudo -y dpkg -i atom.deb
+rm atom.deb
+
+# Install Slack from .deb sources
+echo "› downloading Slack"
+wget -O slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-3.0.5-amd64.deb
+echo "› installing Slack"
+sudo -y dpkg -i slack.deb
+rm slack.deb

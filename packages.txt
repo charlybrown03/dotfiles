@@ -1,0 +1,12 @@
+ack-grep
+ansible
+apt-transport-https
+autojump
+ca-certificates
+curl
+git
+htop
+python-pip
+software-properties-common
+xsel
+zsh

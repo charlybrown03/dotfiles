@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Ubuntu distrubutions
-sudo apt install autojump git htop vagrant virtualbox xsel zsh ack-grep
-
-# Arch distrubutions
-# sudo pacman -Sy autojump git htop node wget atom docker vagrant virtualbox xsel
