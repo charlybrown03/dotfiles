@@ -47,12 +47,20 @@ echo "› installing from .deb sources"
 echo "› downloading Atom"
 wget -O atom.deb https://atom.io/download/deb
 echo "› installing Atom"
-sudo -y dpkg -i atom.deb
+sudo dpkg -i atom.deb
 rm atom.deb
 
 # Install Slack from .deb sources
 echo "› downloading Slack"
 wget -O slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-3.0.5-amd64.deb
 echo "› installing Slack"
-sudo -y dpkg -i slack.deb
+sudo dpkg -i slack.deb
 rm slack.deb
+
+# Install MySQLWorkench from .deb sources
+echo "› downloading MySQLWorkench"
+wget -O mysql-workbench.deb https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.10-1ubuntu16.04-amd64.deb
+echo "› installing MySQLWorkench"
+sudo dpkg -i mysql-workbench.deb
+rm mysql-workbench.deb
+sudo apt install -f
